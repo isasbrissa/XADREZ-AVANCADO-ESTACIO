@@ -1,60 +1,34 @@
-# ♞ Xadrez - Movimentos Complexos
+# Xadrez - Movimentos Complexos
 
-Simulador avançado de movimentos de peças de xadrez implementando técnicas de recursividade e loops complexos para o desafio final de programação em C.
+Projeto final da disciplina onde implementei movimentos de peças de xadrez usando recursividade e loops complexos.
 
-## 🎯 Objetivo
+## O que faz
 
-Demonstrar o uso de técnicas avançadas de programação em C:
-- **Recursividade** para Torre, Bispo e Rainha
-- **Loops complexos** com múltiplas condições para o Cavalo
-- **Loops aninhados** combinados com recursividade para o Bispo
+O programa simula o movimento de 4 peças do xadrez:
+- Torre: vai para a direita
+- Bispo: movimento diagonal  
+- Rainha: vai para baixo
+- Cavalo: faz o movimento em L (2 pra cima, 1 pra direita)
 
-## 🔧 Funcionalidades Implementadas
+## Como funciona
 
-### 🏰 Torre
-- **Técnica:** Recursividade pura
-- **Movimento:** Linear para a direita
-- **Implementação:** Função recursiva com caso base controlado
+**Torre e Rainha:** usei recursividade simples, a função chama ela mesma até acabar as casas.
 
-### ⛪ Bispo  
-- **Técnica:** Recursividade + Loops aninhados
-- **Movimento:** Diagonal (combinação de horizontal e vertical)
-- **Implementação:** Loop externo recursivo (vertical) + loop interno (horizontal)
+**Bispo:** foi mais complicado, tive que combinar recursividade com loops. O loop de fora controla quantas vezes vai subir, o de dentro quantas vezes vai para a direita.
 
-### 👑 Rainha
-- **Técnica:** Recursividade pura
-- **Movimento:** Linear para baixo
-- **Implementação:** Função recursiva similar à Torre, direção oposta
+**Cavalo:** esse foi o mais trabalhoso. Usei loops aninhados com várias variáveis pra controlar. Primeiro faz 2 movimentos pra cima, depois 1 pra direita. Usei continue e break como pedido.
 
-### 🐴 Cavalo
-- **Técnica:** Loops complexos com múltiplas variáveis
-- **Movimento:** Em "L" (2 casas para cima + 1 para direita)
-- **Implementação:** Loops aninhados com `continue`, `break` e múltiplas condições
+## Para executar
 
-## ⚙️ Especificações Técnicas
-
-- **Linguagem:** C (ANSI C99)
-- **Compilador:** GCC
-- **Estruturas:** Recursividade, loops aninhados, controle de fluxo
-- **Saídas:** `printf("Cima\n")`, `printf("Baixo\n")`, `printf("Esquerda\n")`, `printf("Direita\n")`
-
-## 🚀 Como executar
-
-### Compilando
 gcc xadrez.c -o xadrez
-
-text
-
-### Executando
 ./xadrez
 
-text
 
-## 📊 Exemplo de Saída
+## Exemplo do que aparece
 
 === SIMULADOR DE MOVIMENTOS DE XADREZ AVANÇADO ===
 
-🏰 TORRE - Movimento Recursivo
+Torre - Movimento Recursivo
 Direita
 Direita
 Direita
@@ -62,7 +36,7 @@ Direita
 Direita
 Torre finalizou o movimento!
 
-⛪ BISPO - Recursividade + Loops Aninhados
+Bispo - Recursividade + Loops Aninhados
 Direita
 Cima
 Direita
@@ -74,7 +48,7 @@ Direita
 Cima
 Bispo finalizou o movimento diagonal!
 
-👑 RAINHA - Movimento Recursivo
+Rainha - Movimento Recursivo
 Baixo
 Baixo
 Baixo
@@ -83,7 +57,7 @@ Baixo
 Baixo
 Rainha finalizou o movimento!
 
-🐴 CAVALO - Loops Complexos
+Cavalo - Loops Complexos
 --- Movimento 1 em L ---
 Cima
 Cima
@@ -98,29 +72,15 @@ Cima
 Direita
 Cavalo finalizou 3 movimentos em L!
 
-=== FIM DA SIMULAÇÃO ===
 
-text
+## Observações
 
-## 🏗️ Arquitetura do Código
+Defini as constantes direto no código:
+- TORRE_CASAS = 5
+- BISPO_CASAS = 4  
+- RAINHA_CASAS = 6
+- CAVALO_MOVIMENTOS = 3
 
-- **Constantes:** Configuração de movimentos por peça
-- **Funções Recursivas:** Torre, Bispo e Rainha
-- **Loops Complexos:** Cavalo com múltiplos controles
-- **Documentação:** Comentários detalhados explicando cada técnica
-- **Modularidade:** Funções especializadas para cada peça
+Tentei deixar o código bem comentado pra explicar a lógica, principalmente a parte da recursividade que ainda me confunde um pouco as vezes.
 
-## 📚 Conceitos Aplicados
-
-- ✅ Recursividade com casos base
-- ✅ Loops aninhados (`for` dentro de `for`)  
-- ✅ Controle de fluxo (`continue`, `break`)
-- ✅ Múltiplas variáveis de controle
-- ✅ Prevenção de stack overflow
-- ✅ Código bem documentado e legível
-
----
-
-**Desenvolvido para:** Estácio - Algoritmos e Programação Estruturada  
-**Nível:** Mestre - Desafio Final  
-**Técnicas:** Recursividade + Loops Complexos
+A parte mais difícil foi fazer o bispo funcionar direito com recursão e loop junto. Testei várias vezes até conseguir fazer o movimento diagonal certinho.
